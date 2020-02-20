@@ -15,6 +15,7 @@ To be inserted.
 
 1. Open the Amazon Cognito Console in Asia Pacific(Sydney) Region at https://ap-southeast-2.console.aws.amazon.com/cognito/
 2. Click on Manage User Pools and select the User Pool created by the CloudFormation Template "ELBDevlabs-user-pool" 
+
 3. Create user in the Users and groups navigation pane and fill out the user form (Note you do not have to enter your Phone number and Email detail if you tick the "Mark as verified" box for each field)
 4. Configure the App client settings from the App integration navigation pane :
   a. Select "Cognito User Pool"
