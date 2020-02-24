@@ -23,6 +23,9 @@ In this lab we, you will be building a website where users need to be authentica
 ![UserCreation](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-02-24+at+3.17.25+PM.png)
 
 4. Configure the App client settings from the App integration navigation pane :
+
+![AppConf](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-02-24+at+3.34.41+PM.png)
+
   a. Select "Cognito User Pool"
   b. Configure the callback URL(s) : https://elbdevlabs.yecine.myinstance.com/oauth2/idpresponse
   c. Allowed  OAuth Flows: Authorization code grant
