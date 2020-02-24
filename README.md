@@ -18,7 +18,10 @@ In this lab we, you will be building a website where users need to be authentica
 
 ![CognitoUserPool](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-02-24+at+3.12.11+PM.png)
 
-3. Create user in the Users and groups navigation pane and fill out the user form (Note you do not have to enter your Phone number and Email detail if you tick the "Mark as verified" box for each field)
+3. Create user in the Users and groups navigation pane and fill out the user form (you can choose either phone or email)
+
+![UserCreation] (https://github.com/YecineA/elb-authentication-cognito/edit/master/README.md)
+
 4. Configure the App client settings from the App integration navigation pane :
   a. Select "Cognito User Pool"
   b. Configure the callback URL(s) : https://elbdevlabs.yecine.myinstance.com/oauth2/idpresponse
