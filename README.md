@@ -26,11 +26,13 @@ In this lab we, you will be building a website where users need to be authentica
 
 ![AppConf](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-02-24+at+3.34.41+PM.png)
 
+
   a. Select "Cognito User Pool"
   b. Configure the callback URL(s) : https://elbdevlabs.yecine.myinstance.com/oauth2/idpresponse
   c. Allowed  OAuth Flows: Authorization code grant
   d. Allowed OAuth Scopes : openid
   e. Save changes
+  
 5. Configure the Domain name for your Cogntio endpoint and check its availability with the "Check availability" button, then hit "Save changes"
 
 ### **Configure ALB Authentication rule**
