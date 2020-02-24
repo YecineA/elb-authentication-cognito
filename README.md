@@ -26,14 +26,20 @@ In this lab we, you will be building a website where users need to be authentica
 
 ![AppConf](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-02-24+at+3.34.41+PM.png)
 
-
   a. Select "Cognito User Pool"
-  b. Configure the callback URL(s) : https://elbdevlabs.yecine.myinstance.com/oauth2/idpresponse
-  c. Allowed  OAuth Flows: Authorization code grant
-  d. Allowed OAuth Scopes : openid
-  e. Save changes
   
+  b. Configure the callback URL(s) : https://elbdevlabs.yecine.myinstance.com/oauth2/idpresponse
+  
+  c. Allowed  OAuth Flows: Authorization code grant
+  
+  d. Allowed OAuth Scopes : openid
+  
+  e. Save changes
+
 5. Configure the Domain name for your Cogntio endpoint and check its availability with the "Check availability" button, then hit "Save changes"
+
+![Domain](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-02-24+at+3.39.18+PM.png)
+
 
 ### **Configure ALB Authentication rule**
 
@@ -41,11 +47,24 @@ In this lab we, you will be building a website where users need to be authentica
 2. Select the Load Balancers menu from the navigation pane
 3. Select the Load Balancer that was created as part of the CloudFormation template 
 4. At the bottom, select the Listener Tab and select the "View/Edit rules" 
+
+![ELBAuthRule](https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2018/05/16/elb_auth_1-1024x476.png)
+
+
 5. Edit the default rule and delete the default action. Replace "Forward" by with "Authenticate"
+
+![DefRule](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-02-24+at+3.46.04+PM.png)
+
 6. Select Amazon Cognito and choose the Pool Id that we configured previously 
 7. Select App Client we configured (there should only one App Client)
 8. Leave by default the other parameters and click on the Validation Box
+
+![CognitoPool](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-02-24+at+3.47.11+PM.png)
+
 9. After the first Authenticate rule, add a new action "Forward to" and select the Target group that was created as part of CloudFormation 
+
+![Vali](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-02-24+at+3.48.02+PM.png)
+
 10. Validate the settings and click on the Update button
 
 
