@@ -16,7 +16,7 @@ In this lab we, you will be building a website where users need to be authentica
 1. Open the Amazon Cognito Console in Asia Pacific(Sydney) Region at https://ap-southeast-2.console.aws.amazon.com/cognito/
 2. Click on Manage User Pools and select the User Pool created by the CloudFormation Template "ELBDevlabs-user-pool" 
 
-![CognitoUserPool](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-02-24+at+3.12.11+PM.png)
+![CognitoUserPool](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-02-24+at+3.17.25+PM.png)
 
 3. Create user in the Users and groups navigation pane and fill out the user form (you can choose either phone or email)
 
