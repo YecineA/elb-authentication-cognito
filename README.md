@@ -69,4 +69,4 @@ In this lab we, you will be building a website where users need to be authentica
 
 
 ### **Try it***
-Browse to your ALB Domain name configured for the website : https://devlabs.yecine.myinstance.com
+Browse to your ALB Domain name configured for the website : https://elbdevlabs.yecine.myinstance.com
