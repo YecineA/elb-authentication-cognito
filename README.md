@@ -5,7 +5,7 @@ In this lab we, you will be building a website where users need to be authentica
 
 
 ## **Architecture**
-To be inserted.
+![Image description] https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/aws-security-week-cloudscale-authentication-advanced-authorization-with-amazon-cognito-amazon-cloud-directory-18-638.jpg
 
 ## **Walkthrough**
 1. Configure Cognito User pool
