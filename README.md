@@ -35,7 +35,7 @@ Configure the App client settings from the App integration navigation pane :
   a. Select "Cognito User Pool"
   
   b. Configure the callback URL(s) : https://elbdevlabs.yecine.myinstance.com/oauth2/idpresponse
-  This tells Cognito where to redirect the User once authenticated
+  This tells Cognito where to redirect the User once authenticated, Cognito needs to redirect the authenticated user back to the LoadBalancer. To find out what is the DNS name of your LoadBalancer, please refer to the 
   
   c. Allowed  OAuth Flows: Authorization code grant
   
