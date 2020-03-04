@@ -55,7 +55,7 @@ Configure the App client settings from the App integration navigation pane :
 3. Select the Load Balancer that was created as part of the CloudFormation template 
 4. At the bottom, select the Listener Tab and select the "View/Edit rules" 
 
-![ELBAuthRule](https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2018/05/16/elb_auth_1-1024x476.png)
+![ELBAuthRule](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-03-05+at+10.04.28+AM.png)
 
 
 5. Edit the default rule and delete the default action. Replace "Forward" by with "Authenticate"
