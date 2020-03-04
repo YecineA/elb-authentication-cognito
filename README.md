@@ -34,8 +34,11 @@ Configure the App client settings from the App integration navigation pane :
 
   a. Select "Cognito User Pool"
   
-  b. Configure the callback URL(s) : https://elbdevlabs.yecine.myinstance.com/oauth2/idpresponse
-  This tells Cognito where to redirect the User once authenticated, Cognito needs to redirect the authenticated user back to the LoadBalancer. To find out what is the DNS name of your LoadBalancer, please refer to the 
+  b. Configure the callback URL(s) l: https://yourdomain.com/oauth2/idpresponse
+  
+This tells Cognito where to redirect the User once authenticated, Cognito needs to redirect the authenticated user back to the LoadBalancer. Your Application Load Balancer (ALB) was created as part of a template and a DNS Alias record was created using a custom domain name. Please ask your instructor to know what is the domain name of your ALB. 
+
+If your ALB DNS name is elbdevlabs.yecine.myinstance.com, the callback URL(s) will be : https://elbdevlabs.yecine.myinstance.com/oauth2/idpresponse 
   
   c. Allowed  OAuth Flows: Authorization code grant
   
@@ -43,9 +46,11 @@ Configure the App client settings from the App integration navigation pane :
   
   e. Save changes
 
-5. Configure the Domain name for your Cogntio endpoint and check its availability with the "Check availability" button, then hit "Save changes"
+5. Configure the Domain name for your Cogntio endpoint and check its availability with the "Check availability" button, then hit "Save changes". You can choose any Domain name as long as it is unique. In the example below I was using "elbdevlabs"
 
 ![Domain](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-02-24+at+3.39.18+PM.png)
+
+At this stage, we have an IdP configured with a user. This IdP will be used by ALB to force your user to login and to allow ALB to validate and verify your user access as part of the authentication flow. Now we need to configure ALB to authenticate the clients browsing to the website.
 
 
 ### **Configure ALB Authentication rule**
