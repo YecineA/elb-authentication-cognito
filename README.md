@@ -13,22 +13,29 @@ In this lab we, you will be building a website where users need to be authentica
 
 ### **Configure Cognito User pool**
 
+Web developers want to use federated identities from social networks to allow their users to sign-in. ALB’s new authentication action provides authentication through social Identity Providers (IdP) like Google, Facebook, and Amazon through Amazon Cognito.
+We will use Cognito to act as an identity provider (IdP) which will authenticate users through the user pools supported by Amazon Cognito. 
+
 1. Open the Amazon Cognito Console in Asia Pacific(Sydney) Region at https://ap-southeast-2.console.aws.amazon.com/cognito/
-2. Click on Manage User Pools and select the User Pool created by the CloudFormation Template "ELBDevlabs-user-pool" 
+2. Click on Manage User Pools and select the User Pool created by the CloudFormation Template "ELBDevlabs-user-pool". A user pool is a user directory in Amazon Cognito and we will refer to this when we will configure the Authentication on the Load Balancer.
 
 ![CognitoUserPool](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-02-24+at+3.12.11+PM.png)
 
-3. Create user in the Users and groups navigation pane and fill out the user form (you can choose either phone or email)
+3. Create user in the Users and groups navigation pane and fill out the user form (you can choose either phone or email). This where all the Users related information will be stored
 
 ![UserCreation](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-02-24+at+3.17.25+PM.png)
 
-4. Configure the App client settings from the App integration navigation pane :
+4. After you create a user pool, you can create an app to use the built-in webpages for signing up and signing in your users.
+
+Configure the App client settings from the App integration navigation pane :
+
 
 ![AppConf](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-02-24+at+3.34.41+PM.png)
 
   a. Select "Cognito User Pool"
   
   b. Configure the callback URL(s) : https://elbdevlabs.yecine.myinstance.com/oauth2/idpresponse
+  This tells Cognito where to redirect the User once authenticated
   
   c. Allowed  OAuth Flows: Authorization code grant
   
