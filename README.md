@@ -10,6 +10,7 @@ In this lab we, you will be building a website where users need to be authentica
 ## ** Login Page Website ** ##
 
 After deploying the solution, you will have a website hosted behind your ALB. This website shows a login page that will use Cognito integrated with ALB. 
+
 ![BeforeAuth](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-04-13+at+3.29.09+PM.png)
 
 ## **Walkthrough**
