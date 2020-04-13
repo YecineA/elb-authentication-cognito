@@ -69,9 +69,24 @@ At this stage, we have an IdP configured with a user. This IdP will be used by A
 ![ELBAuthRule](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-03-05+at+10.04.28+AM.png)
 
 
-5. Edit the default rule and delete the default action. Replace "Forward" by with "Authenticate"
+5. We will add a new Path based rule, which will be matched when the user click on the "Login" button. This button redirects the user to the /users/users.html page. We need to configure a rule to authenticate the users when this Path is used. 
 
-![DefRule](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-02-24+at+3.46.04+PM.png)
+  a. Click on the "+" button at the top to insert a rule 
+  
+  ![AddPathRule](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-04-13+at+3.46.44+PM.png)
+  
+  b. Under the Conidtion (IF), Click on the "+ Add condition" to select Path and use the "/users/*" path. 
+  
+  ![Path](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-04-13+at+5.57.29+PM.png)
+  
+  c. Under the Action (THEN), add an action : AUTHENTICATE and refer to the Cognito User pool ID (It should be visible from the drop down list)
+  
+![Forward](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-04-13+at+3.50.11+PM.png)
+  
+  d. We need to add an action once the user is authenticated, the action will be FORWARD to forward to the Target group where our Instance is running the website (it should be visible from the drop down list) 
+  
+
+ ![UserpoolID](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-04-13+at+3.50.11+PM.png)
 
 6. Select Amazon Cognito and choose the Pool Id that we configured previously 
 7. Select App Client we configured (there should only one App Client)
