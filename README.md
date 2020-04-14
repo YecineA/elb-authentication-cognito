@@ -13,6 +13,8 @@ After deploying the solution, you will have a website hosted behind your ALB. Th
 
 ![BeforeAuth](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-04-13+at+3.29.09+PM.png)
 
+Once the user click on the Login button, it gets redirected to the Cognito Login page and once logged in, the user gets redirected back to the ALB with a code. ALb will then communicate with Cognito to verify and validate the user based on the code. Once the validation passed, ALB will eventually redirect the user to the original request and give an authentication cookie that will be used for any authenticated subsequent requests.
+
 ## **Walkthrough**
 1. Configure Cognito User pool
 2. Congigure Authentication rule on ALB
