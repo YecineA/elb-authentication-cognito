@@ -1,0 +1,41 @@
+Before running the labs : 
+
+The CloudFormation template is creating  :
+- ELB with an HTTPS Listener
+- Cognito User pool
+- Autoscaling Group with an EC2 Instance 
+
+The template also configure :
+
+- HTTPS listener with a pre existing certificate
+- Ec2 Instance with a pre configured web application 
+
+This template is intended for a Labs running in multiple Workstation where we would need to have an existing ACM certificate. I am using my own domain yecine.myinstance.com. So before running this template, some manual work is required to generate the certificate and gather the ARN. See below :
+
+"ALBListener": {
+			"Type": "AWS::ElasticLoadBalancingV2::Listener",
+			"Properties": {
+				"Certificates": [{
+					"CertificateArn": "arn:aws:acm:ap-southeast-2:885035463258:certificate/2a7b97a3-78a6-42e0-9eff-7840c964b32b"
+					
+Once you have an ACM certificate created in the correct region, you can update the template and replace the ARN above by yours. Then proceed with the following :
+					
+					
+1 : Run the Cloudformation template : 
+- Give a name to your Stack 
+- Give a name to your AuthName for Cognito
+- Give your ssh key pair for the ec2 instance running the webserver (not needed to ssh in this labs)
+- Choose the VPC and subnets. Subnets must be public as the ELB will be configured in these. (at least 2 subnets)
+- Ack the IAM box, and create the stack 
+
+> In the output, you will have the ELB FQDN that was created. Update the Route 53 records to point the custom DNS name that will be used in the labs to the ALB created. 
+
+
+
+Once the first customer went through the labs, we need to clean up the environment, there is a script that delete users that were created and listener rules. So the next customer can start the labs from scratch. 
+
+
+
+
+
+
