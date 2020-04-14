@@ -88,17 +88,9 @@ At this stage, we have an IdP configured with a user. This IdP will be used by A
   d. We need to add an action once the user is authenticated, the action will be FORWARD to forward to the Target group where our Instance is running the website (it should be visible from the drop down list) 
   
 
- ![UserpoolID](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-04-13+at+3.50.11+PM.png)
+ ![UserpoolID](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-04-14+at+12.30.40+PM.png)
 
-6. Select Amazon Cognito and choose the Pool Id that we configured previously 
-7. Select App Client we configured (there should only one App Client)
-8. Leave by default the other parameters and click on the Validation Box
 
-![CognitoPool](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-02-24+at+3.47.11+PM.png)
-
-9. After the first Authenticate rule, add a new action "Forward to" and select the Target group that was created as part of CloudFormation 
-
-![Vali](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-02-24+at+3.48.02+PM.png)
 
 10. Validate the settings and click on the Update button
 
