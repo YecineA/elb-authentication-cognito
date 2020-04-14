@@ -56,3 +56,29 @@ print 'All users have been deleted'
 #response = client.delete_user_pool(
 #    UserPoolId=cognitoID
 #)
+
+#Delete Listener rules 
+
+Print 'Starting to delete rule'
+#Get the list of resources from CF
+client = boto3.client('cloudformation')
+response = client.list_stack_resources(StackName='ELBdevlabs3')
+
+#Get the ALB ARN
+alb=response['StackResourceSummaries'][2]['PhysicalResourceId']
+
+#list the ALB listener
+client = boto3.client('elbv2') 
+listener=client.describe_listeners(LoadBalancerArn=alb)
+
+#Get the Listener ARN
+listenerarn=listener['Listeners'][0]['ListenerArn']
+
+#Describe rule to get the rule ARN we need to delete
+rule = client.describe_rules(ListenerArn=listenerarn)   
+rulearn=rule['Rules'][0]['RuleArn']
+
+
+#Delete the Rule
+delete = client.delete_rule(RuleArn=rulearn)  
+print 'Rule deleted'
