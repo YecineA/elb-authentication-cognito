@@ -81,9 +81,9 @@ At this stage, we have an IdP configured with a user. This IdP will be used by A
   
   ![Path](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-04-13+at+5.57.29+PM.png)
   
-  c. Under the Action (THEN), add an action : AUTHENTICATE and refer to the Cognito User pool ID (It should be visible from the drop down list)
+  c. Under the Action (THEN), add an action : AUTHENTICATE and refer to the Cognito User pool ID (It should be visible from the drop down list). You can leave the other default parameters 
   
-![Forward](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-04-13+at+3.50.11+PM.png)
+![Forward](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-04-14+at+12.22.09+PM.png)
   
   d. We need to add an action once the user is authenticated, the action will be FORWARD to forward to the Target group where our Instance is running the website (it should be visible from the drop down list) 
   
