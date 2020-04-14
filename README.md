@@ -94,6 +94,8 @@ At this stage, we have an IdP configured with a user. This IdP will be used by A
 
 10. Validate the settings and click on the Update button
 
+![Validate](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-04-14+at+12.33.31+PM.png)
+
 
 ### **Try it***
 Browse to your ALB Domain name configured for the website : https://elbdevlabs.yecine.myinstance.com
