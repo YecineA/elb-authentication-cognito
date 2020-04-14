@@ -15,6 +15,11 @@ After deploying the solution, you will have a website hosted behind your ALB. Th
 
 Once the user click on the Login button, it gets redirected to the Cognito Login page and once logged in, the user gets redirected back to the ALB with a code. ALB will then communicate with Cognito to verify and validate the user based on the code. Once the validation passed, ALB will eventually redirect the user to the original request and give an authentication cookie (step 4 in the diagram above) that will be used for any authenticated subsequent requests.
 
+Please refer to this website for a slideshow demonstrating the Authentication workflow :
+https://www.exampleloadbalancer.com/auth_detail.html
+
+
+
 ## **Walkthrough**
 1. Configure Cognito User pool
 2. Congigure Authentication rule on ALB
