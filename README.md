@@ -19,6 +19,17 @@ Please refer to this website for a slideshow demonstrating the Authentication wo
 https://www.exampleloadbalancer.com/auth_detail.html
 
 
+## **Requirements** 
+
+1. Own a public domain name that will be used by your ALB
+
+2. Generate a SSH Key-pair in the region where you will run the lab.  
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html
+
+3. Generate an ACM Certificate that will be used to secure communication with ALB using HTTPS. The certificate must secure your domain name you own. (Ie, if you own the domain example.com, you should create a certificate that secure example.com and *.example.com)
+https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html
+
+
 
 ## **Walkthrough**
 1. Configure Cognito User pool
