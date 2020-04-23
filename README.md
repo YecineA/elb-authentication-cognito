@@ -47,6 +47,28 @@ https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html
   D- EC2 Instance with a Web server 
   
 
+Use the following link to deploy the Template :
+
+https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Template/ELBAuthCognito.json
+
+![StackURL](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-04-23+at+3.35.30+PM.png)
+
+The stack requires few inputs from you.  Most of them are self explanatory, but I will clarify few below : 
+
+![StackDetails](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-04-23+at+3.31.12+PM.png)
+
+
+
+-  Stack Name : Any name you want to give to the stack
+- ACMCertificate : This is the certificate that ALB will use to secure the communication with your browser. You would need to copy the ARN from the ACM console :
+
+![ACMARN](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-04-23+at+3.39.06+PM.png)
+
+
+- AuthName : This will be the name of the Cognito User pool we will use to create our users. You can give any name. 
+
+
+
 ### **Configure Cognito User pool**
 
 Web developers want to use federated identities from social networks to allow their users to sign-in. ALB’s new authentication action provides authentication through social Identity Providers (IdP) like Google, Facebook, and Amazon through Amazon Cognito.
