@@ -32,8 +32,20 @@ https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html
 
 
 ## **Walkthrough**
+
+1. Run the Cloudformation template 
 1. Configure Cognito User pool
 2. Congigure Authentication rule on ALB
+
+
+## **Run the Cloudformation template**
+
+1. The Cloudformation template will deploy :
+  A- VPC with Public and Private Subnet
+  B- ALB with an HTTPS Listener using your ACM certificate
+  C- Cognito User pool that will be used for the authentication 
+  D- EC2 Instance with a Web server 
+  
 
 ### **Configure Cognito User pool**
 
