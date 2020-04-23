@@ -67,8 +67,11 @@ The stack requires few inputs from you.  Most of them are self explanatory, but 
 
 - AuthName : This will be the name of the Cognito User pool we will use to create our users. You can give any name. 
 
-Once the template is deployed, you can refer to the resources tab to see what are the different resources created. 
-We only need to know what is the Cognito User Pool and ALB created that we will configure. 
+Once the template is deployed, take the ALB FQDN in the output tab, and create a DNS CNAME to point your own domain to your ALB. 
+If you are using Route 53 for your Domain, you can follow the link below :
+
+https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-elb-load-balancer.html
+
 
 
 ### **Configure Cognito User pool**
