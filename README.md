@@ -98,7 +98,8 @@ Configure the App client settings from the App integration navigation pane :
   
 This tells Cognito where to redirect the User once authenticated, Cognito needs to redirect the authenticated user back to the LoadBalancer. Your Application Load Balancer (ALB) was created as part of a template and a DNS Alias record was created using a custom domain name. Please ask your instructor to know what is the domain name of your ALB. 
 
-If your ALB DNS name is elbdevlabs.yecine.myinstance.com, the callback URL(s) will be : https://elbdevlabs.yecine.myinstance.com/oauth2/idpresponse 
+In my environment, I am using my own domain name yecine.myinstance.com. as such my callback URL will be :
+https://elbdevlabs.yecine.myinstance.com/oauth2/idpresponse 
   
   c. Allowed  OAuth Flows: Authorization code grant
   
@@ -150,4 +151,4 @@ At this stage, we have an IdP configured with a user. This IdP will be used by A
 
 
 ### **Try it***
-Browse to your ALB Domain name configured for the website : https://elbdevlabs.yecine.myinstance.com
+Browse to your ALB Domain name configured for the website : https://yourdomain.com
