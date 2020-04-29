@@ -30,6 +30,7 @@ https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html
 https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html
 
 
+4. Write down the Full Qualified Domain Name (FQDN) you will use to point your domain name to your ALB. (In my scenario I am using elbdevlabs.yecine.myinstance.com) 
 
 ## **Walkthrough**
 
@@ -55,7 +56,7 @@ https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Template/E
 
 The stack requires few inputs from you.  Most of them are self explanatory, but I will clarify few below : 
 
-![StackDetails](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-04-23+at+3.31.12+PM.png)
+![StackDetails](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-04-29+at+6.50.47+PM.png)
 
 
 
@@ -66,6 +67,9 @@ The stack requires few inputs from you.  Most of them are self explanatory, but 
 
 
 - AuthName : This will be the name of the Cognito User pool we will use to create our users. You can give any name. 
+
+-ELBAlias : This is the FQDN of your website you will use. You should have noted this down in the requirement. We need this value to be exacte as we will configure the Web server accordingly. 
+
 
 Once the template is deployed, take the ALB FQDN in the output tab, and create a DNS CNAME to point your own domain to your ALB. 
 If you are using Route 53 for your Domain, you can follow the link below :
