@@ -26,7 +26,7 @@ https://www.exampleloadbalancer.com/auth_detail.html
 2. Generate a SSH Key-pair in the region where you will run the lab.  
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html
 
-3. Generate an ACM Certificate that will be used to secure communication with ALB using HTTPS. The certificate must secure your domain name you own. (Ie, if you own the domain example.com, you should create a certificate that secure example.com and *.example.com)
+3. Generate an ACM Certificate that will be used to secure communication with ALB using HTTPS. The certificate must secure your domain name you own. (let's say , if you own the domain example.com, you should create a certificate that secure example.com and *.example.com)
 https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html
 
 
