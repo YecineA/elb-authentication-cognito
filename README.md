@@ -48,9 +48,11 @@ https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html
   D- EC2 Instance with a Web server 
   
 
-Use the following link to deploy the Template :
+To deploy the stack, you can either copy/paste following link in the CloudFormation or use the second link that will open CloudFormation in sydney region directly 
 
 https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Template/ELBAuthCognito.json
+
+https://ap-southeast-2.console.aws.amazon.com/cloudformation/home?region=ap-southeast-2#/stacks/create/review?stackName=AWSALBAuthentication&templateURL=https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Template/ELBAuthCognito.json
 
 ![StackURL](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-04-23+at+3.35.30+PM.png)
 
