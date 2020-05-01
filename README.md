@@ -99,8 +99,6 @@ We will use Cognito to act as an identity provider (IdP) which will authenticate
 Configure the App client settings from the App integration navigation pane :
 
 
-![AppConf](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-02-24+at+3.34.41+PM.png)
-
   a. Select "Cognito User Pool"
   
   b. Configure the callback URL(s) l: https://yourdomain.com/oauth2/idpresponse
@@ -115,6 +113,9 @@ https://elbdevlabs.yecine.myinstance.com/oauth2/idpresponse
   d. Allowed OAuth Scopes : openid
   
   e. Save changes
+
+![AppConf](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-02-24+at+3.34.41+PM.png)
+
 
 5. Configure the Domain name for your Cogntio endpoint and check its availability with the "Check availability" button, then hit "Save changes". You can choose any Domain name as long as it is unique. In the example below I was using "elbdevlabs"
 
