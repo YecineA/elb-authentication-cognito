@@ -1,7 +1,7 @@
 # ** Build a website that requires user to authenticate with AWS ELB/Cognito **
 
 ## **Overview**
-In this lab we, you will be building a website where users need to be authenticate before accessing the content using Amazon Application Load Balancer (ALB)  and integrating with Amazon Cognito. AWS ALB provides authentication through social Identity Providers (IdP) which will be Amazon  Cognito. In this lab, we will have a public website available to everyone, and an other page only visible for authenticated users. If users tries to access this page,ALB redirects them to Cognito which will handle the Login and redirect them back to your ALB to access the restricted content. 
+In this lab we, you will be building a website where a user need to be authenticated before accessing the content using Amazon Application Load Balancer (ALB)  and integrating with Amazon Cognito. AWS ALB provides authentication through social Identity Providers (IdP) which will be Amazon  Cognito. In this lab, we will have a public website available to everyone, and an other page only visible for authenticated users. If users tries to access this page,ALB redirects them to Cognito which will handle the Login and redirect them back to your ALB to access the restricted content. 
 
 
 ## **Architecture**
@@ -9,11 +9,11 @@ In this lab we, you will be building a website where users need to be authentica
 
 ## ** Login Page Website ** ##
 
-After deploying the solution, you will have a website hosted behind your ALB. This website shows a login page that will use Cognito integrated with ALB. 
+After deploying the solution, you will have a website hosted behind your ALB. This website shows a login page. This login button will trigger a redirection which will match an ALB Listener rule. This rule will be used to authenticate the user, this authentication is made through Cognito.
 
 ![BeforeAuth](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-04-13+at+3.29.09+PM.png)
 
-Once the user click on the Login button, it gets redirected to the Cognito Login page and once logged in, the user gets redirected back to the ALB with a code. ALB will then communicate with Cognito to verify and validate the user based on the code. Once the validation passed, ALB will eventually redirect the user to the original request and give an authentication cookie (step 4 in the diagram above) that will be used for any authenticated subsequent requests.
+Once the user clicks on the Login button, it gets redirected to a specific URL Path that will match an ALB Rule. This rule is configured to "Authenticate". This causes the ALB to redirect the user back to a Cognito Login page and once logged in, the user gets (once more) redirected back to the ALB with a code. ALB will then communicate with Cognito to verify and validate the user based on the code. Once the validation passed, ALB will eventually redirect the user to the original request and give an authentication cookie (step 4 in the diagram above) that will be used for any subsequent authenticated  requests. This is this process that we will configure in this lab.
 
 Please refer to this website for a slideshow demonstrating the Authentication workflow :
 https://www.exampleloadbalancer.com/auth_detail.html
@@ -30,7 +30,7 @@ https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html
 https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html
 
 
-4. Write down the Full Qualified Domain Name (FQDN) you will use to point your domain name to your ALB. (In my scenario I am using elbdevlabs.yecine.myinstance.com) 
+4. Write down the Full Qualified Domain Name (FQDN) you will use to point your domain name to your ALB. (In my scenario I am using elbdevlabs.yecine.myinstance.com). **Note this down as this will be used in the CloudFormation Template**
 
 ## **Walkthrough**
 
@@ -56,13 +56,14 @@ https://ap-southeast-2.console.aws.amazon.com/cloudformation/home?region=ap-sout
 
 ![StackURL](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-04-23+at+3.35.30+PM.png)
 
-The stack requires few inputs from you.  Most of them are self explanatory, but I will clarify few below : 
+The stack requires few inputs from you.  Some are self explanatory, but others are **crucial** for the lab to be working. I will clarify this below : 
 
 ![StackDetails](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-04-29+at+6.50.47+PM.png)
 
 
 
 -  Stack Name : Any name you want to give to the stack
+
 - ACMCertificate : This is the certificate that ALB will use to secure the communication with your browser. You would need to copy the ARN from the ACM console :
 
 ![ACMARN](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-04-23+at+3.39.06+PM.png)
@@ -70,7 +71,7 @@ The stack requires few inputs from you.  Most of them are self explanatory, but 
 
 - AuthName : This will be the name of the Cognito User pool we will use to create our users. You can give any name. 
 
--ELBAlias : This is the FQDN of your website you will use. You should have noted this down in the requirement. We need this value to be exacte as we will configure the Web server accordingly. 
+-ELBAlias : This is the FQDN of your website you will use. You should have noted this down in the requirement. In my own lab I have used the DNS name elbdevlabs.yecine.myinstance.com and created a CNAME pointing to the ALB FQDN accordingly.  **We need this value to be exact as we will configure the Web server accordingly. **
 
 
 Once the template is deployed, take the ALB FQDN in the output tab, and create a DNS CNAME to point your own domain to your ALB. 
