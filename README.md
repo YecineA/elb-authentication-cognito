@@ -1,4 +1,4 @@
-# ** Build a website that requires user to authenticate with AWS ELB/Cognito **
+#  Build a website that requires user to authenticate with AWS ELB/Cognito 
 
 ## **Overview**
 In this lab we, you will be building a website where a user need to be authenticated before accessing the content using Amazon Application Load Balancer (ALB)  and integrating with Amazon Cognito. AWS ALB provides authentication through social Identity Providers (IdP) which will be Amazon  Cognito. In this lab, we will have a public website available to everyone, and an other page only visible for authenticated users. If users tries to access this page,ALB redirects them to Cognito which will handle the Login and redirect them back to your ALB to access the restricted content. 
@@ -80,6 +80,8 @@ If you are using Route 53 for your Domain, you can follow the link below :
 
 https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-elb-load-balancer.html
 
+
+**At this point, you should have a Cloudformation template deployed and a CNAME created for your website pointing to your ALB. Before going further, you should check that your website is accessible. Browse to https://yourwebsite.com (replace yourwebsite.com by your CNAME). Please note the Login button will not force you to authenticate yet. This part will be covered below. (PS: Do not spoil yourself and do not click on the button yet :) )
 
 
 ### **Configure Cognito User pool**
