@@ -47,6 +47,7 @@ https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html
   C- Cognito User pool that will be used for the authentication 
   D- EC2 Instance with a Web server 
   
+**Please note that once the Stack is deployed, the content of the website is not yet restricted to authenticated user yet. We need to configure it first to make is restricted.** 
 
 To deploy the stack, you can either copy/paste following link in the CloudFormation or use the second link that will open CloudFormation in sydney region directly 
 
