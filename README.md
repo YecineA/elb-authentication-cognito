@@ -164,3 +164,10 @@ At this stage, we have an IdP configured with a user. This IdP will be used by A
 
 ### **Try it***
 Browse to your ALB Domain name configured for the website : https://yourdomain.com
+
+
+### **Delete Stack** 
+
+Once you have done the lab and would like to delete the resources, you can delete the stack. Please note some dependencies might not be able to be deleted by the Stack , if so , make sure to delete them manually and re delete the stack. 
+
+https://aws.amazon.com/premiumsupport/knowledge-center/cloudformation-stack-delete-failed/
