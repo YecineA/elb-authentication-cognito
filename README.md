@@ -52,10 +52,11 @@ https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html
 ## **Run the Cloudformation template**
 
 1. The Cloudformation template will deploy :
-  A- VPC with Public and Private Subnet
-  B- ALB with an HTTPS Listener using your ACM certificate
-  C- Cognito User pool that will be used for the authentication 
-  D- EC2 Instance with a Web server 
+
+- VPC with Public and Private Subnet
+- ALB with an HTTPS Listener using your ACM certificate
+- Cognito User pool that will be used for the authentication 
+- EC2 Instance with a Web server running in the Private Subnet
   
 **Please note that once the Stack is deployed, the content of the website is not yet restricted to authenticated user yet. We need to configure it first to make is restricted.** 
 
