@@ -106,9 +106,9 @@ We will use Cognito to act as an identity provider (IdP) which will authenticate
 
 ![CognitoUserPool](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-02-24+at+3.12.11+PM.png)
 
-3. Create user in the Users and groups navigation pane and fill out the user form (you can choose either phone or email). This where all the Users related information will be stored
+3. Create user in the Users and groups navigation pane and fill out the user form (**you need to enter both email and phone, but can select one mean of invitation). This where all the Users related information will be stored
 
-![UserCreation](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-02-24+at+3.17.25+PM.png)
+![UserCreation](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-05-05+at+5.35.11+PM.png)
 
 4. After you create a user pool, you can create an app to use the built-in webpages for signing up and signing in your users.
 
