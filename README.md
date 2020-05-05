@@ -1,11 +1,14 @@
-#  Build a website that requires user to authenticate with AWS ELB/Cognito 
+#  Build a Website Login page with AWS ELB and AWS Cognito 
 
 ## **Overview**
 In this lab we, you will be building a website where a user need to be authenticated before accessing the content using Amazon Application Load Balancer (ALB)  and integrating with Amazon Cognito. AWS ALB provides authentication through social Identity Providers (IdP) which will be Amazon  Cognito. In this lab, we will have a public website available to everyone, and an other page only visible for authenticated users. If users tries to access this page,ALB redirects them to Cognito which will handle the Login and redirect them back to your ALB to access the restricted content. 
 
 
 ## **Architecture**
-![Architecture](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/aws-security-week-cloudscale-authentication-advanced-authorization-with-amazon-cognito-amazon-cloud-directory-18-638.jpg)
+<p align="center">
+  <img width="600" height="350" src="https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/AWS_ALB_Cognito.png">
+</p>
+
 
 ## ** Login Page Website ** ##
 
