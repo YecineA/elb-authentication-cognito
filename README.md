@@ -1,7 +1,7 @@
 #  Build a Website Login page with AWS ELB and AWS Cognito 
 
 ## **Overview**
-In this lab we, you will be building a website where a user need to be authenticated before accessing the content using Amazon Application Load Balancer (ALB)  and integrating with Amazon Cognito. AWS ALB provides authentication through social Identity Providers (IdP) which will be Amazon  Cognito. In this lab, we will have a public website available to everyone, and an other page only visible for authenticated users. If users tries to access this page,ALB redirects them to Cognito which will handle the Login and redirect them back to your ALB to access the restricted content. 
+In this lab we, you will be building a website with a simple Login button. The goal is to have a public website available to everyone, and an other page only visible for authenticated users. To achieve this, we are using AWS Application Load Balancer (ALB)  which integrate with AWS Cognito. AWS ALB provides authentication through social Identity Providers (IdP) which here will be Amazon  Cognito. If users tries to access this page,ALB redirects them to Cognito which will handle the Login and redirect them back to your ALB to access the restricted content. 
 
 
 ## **Architecture**
@@ -10,7 +10,7 @@ In this lab we, you will be building a website where a user need to be authentic
 </p>
 
 
-## ** Login Page Website ** ##
+## **Website** 
 
 After deploying the solution, you will have a website hosted behind your ALB. This website shows a login page. This login button will trigger a redirection which will match an ALB Listener rule. This rule will be used to authenticate the user, this authentication is made through Cognito.
 
@@ -18,7 +18,6 @@ After deploying the solution, you will have a website hosted behind your ALB. Th
   <img width="600" height="350" src="https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-04-13+at+3.29.09+PM.png">
 </p>
 
-![BeforeAuth](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-04-13+at+3.29.09+PM.png)
 
 Once the user clicks on the Login button, it gets redirected to a specific URL Path that will match an ALB Rule. This rule is configured to "Authenticate". This causes the ALB to redirect the user back to a Cognito Login page and once logged in, the user gets (once more) redirected back to the ALB with a code. ALB will then communicate with Cognito to verify and validate the user based on the code. Once the validation passed, ALB will eventually redirect the user to the original request and give an authentication cookie (step 4 in the diagram above) that will be used for any subsequent authenticated  requests. This is this process that we will configure in this lab.
 
