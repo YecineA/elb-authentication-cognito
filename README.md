@@ -84,7 +84,7 @@ The stack requires few inputs from you.  Some are self explanatory, but others a
 - AuthName : This will be the name of the Cognito User pool we will use to create our users. You can give any name. 
 
 -ELBAlias : This is the FQDN of your website you will use. You should have noted this down in the requirement. In my own lab I have used the DNS name elbdevlabs.yecine.myinstance.com and created a CNAME pointing to the ALB FQDN accordingly.  
-**We need this value to be exact as we will configure the Web server accordingly.**
+**We need this value to be exact as the Stack will configure the Web server accordingly.**
 
 
 Once the template is deployed, take the ALB FQDN in the output tab, and create a DNS CNAME to point your own domain to your ALB. 
@@ -93,7 +93,7 @@ If you are using Route 53 for your Domain, you can follow the link below :
 https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-elb-load-balancer.html
 
 
-**At this point, you should have a Cloudformation template deployed and a CNAME created for your website pointing to your ALB. Before going further, you should check that your website is accessible. Browse to https://yourwebsite.com (replace yourwebsite.com by your CNAME). Please note the Login button will not force you to authenticate yet. This part will be covered below. 
+**At this point, you should have a Cloudformation template deployed and a CNAME created for your website pointing to your ALB. Before going further, you should check that your website is accessible. Browse to https://yourwebsite.com (replace yourwebsite.com by your CNAME). Please note the Login button will not force you to authenticate yet. This part will be covered below.**
 
 
 ### **Configure Cognito User pool**
