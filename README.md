@@ -46,7 +46,7 @@ https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html
 
 1. Run the Cloudformation template 
 1. Configure Cognito User pool
-2. Congigure Authentication rule on ALB
+2. Configure Authentication rule on ALB
 
 
 ## **Run the Cloudformation template**
