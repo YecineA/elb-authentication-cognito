@@ -6,7 +6,7 @@ This lab is provided as part of [AWS Builders Online Series](https://aws.amazon.
 https://aws.amazon.com/events/builders-online-series/
 
 ## **Overview**
-In this lab we, you will be building a website with a simple Login button. The goal is to have a public website available to everyone, and an other page only visible for authenticated users. To achieve this, we are using AWS Application Load Balancer (ALB)  which integrate with AWS Cognito. AWS ALB provides authentication through social Identity Providers (IdP) which here will be Amazon  Cognito. If users tries to access this page,ALB redirects them to Cognito which will handle the Login and redirect them back to your ALB to access the restricted content. 
+In this lab, you will be building a website with a simple Login button. The goal is to have a public website available to everyone, and another page only visible for authenticated users. To achieve this, we are using AWS Application Load Balancer (ALB)  which integrates with AWS Cognito. AWS ALB provides authentication through social Identity Providers (IdP) which here will be AWS Cognito. If a user tries to click on the logging button, ALB redirects him to Cognito which will handle the Login and will redirect him back to ALB to access the restricted content. 
 
 
 ## **Architecture**
@@ -36,7 +36,7 @@ https://www.exampleloadbalancer.com/auth_detail.html
 2. Generate a SSH Key-pair in the region where you will run the lab. (We will not actually need to ssh in the instance, but this is always a best practice to be able to ssh in your instance). 
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html
 
-3. Generate an ACM Certificate that will be used to secure communication with ALB using HTTPS. The certificate must secure your domain name you own. (let's say , if you own the domain example.com, you should create a certificate that secure example.com and *.example.com)
+3. Generate an ACM Certificate that will be used to secure communication between the browser and ALB using HTTPS. The certificate must secure the domain name you own. (let's say , if you own the domain example.com, you should create a certificate that secure both example.com and *.example.com)
 https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html
 
 
@@ -58,9 +58,9 @@ https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html
 - Cognito User pool that will be used for the authentication 
 - EC2 Instance with a Web server running in the Private Subnet
   
-**Please note that once the Stack is deployed, the content of the website is not yet restricted to authenticated user yet. We need to configure it first to make is restricted.** 
+**Please note that once the Stack is deployed, the content of the website is not yet restricted to authenticated user yet. We need to configure it first to make it restricted.** 
 
-To deploy the stack, you can either copy/paste following link in the CloudFormation or use the second link that will open CloudFormation in sydney region directly 
+To deploy the stack, you can either copy/paste following link in the CloudFormation Console or use the second link that will open the CloudFormation console in sydney region directly 
 
 https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Template/ELBAuthCognito.json
 
@@ -83,7 +83,8 @@ The stack requires few inputs from you.  Some are self explanatory, but others a
 
 - AuthName : This will be the name of the Cognito User pool we will use to create our users. You can give any name. 
 
--ELBAlias : This is the FQDN of your website you will use. You should have noted this down in the requirement. In my own lab I have used the DNS name elbdevlabs.yecine.myinstance.com and created a CNAME pointing to the ALB FQDN accordingly.  **We need this value to be exact as we will configure the Web server accordingly. **
+-ELBAlias : This is the FQDN of your website you will use. You should have noted this down in the requirement. In my own lab I have used the DNS name elbdevlabs.yecine.myinstance.com and created a CNAME pointing to the ALB FQDN accordingly.  
+**We need this value to be exact as we will configure the Web server accordingly. **
 
 
 Once the template is deployed, take the ALB FQDN in the output tab, and create a DNS CNAME to point your own domain to your ALB. 
