@@ -33,7 +33,7 @@ https://www.exampleloadbalancer.com/auth_detail.html
 
 1. Own a public domain name that will be used by your ALB
 
-2. Generate a SSH Key-pair in the region where you will run the lab.  
+2. Generate a SSH Key-pair in the region where you will run the lab. (We will not actually need to ssh in the instance, but this is always a best practice to be able to ssh in your instance). 
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html
 
 3. Generate an ACM Certificate that will be used to secure communication with ALB using HTTPS. The certificate must secure your domain name you own. (let's say , if you own the domain example.com, you should create a certificate that secure example.com and *.example.com)
@@ -91,7 +91,7 @@ If you are using Route 53 for your Domain, you can follow the link below :
 https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-elb-load-balancer.html
 
 
-**At this point, you should have a Cloudformation template deployed and a CNAME created for your website pointing to your ALB. Before going further, you should check that your website is accessible. Browse to https://yourwebsite.com (replace yourwebsite.com by your CNAME). Please note the Login button will not force you to authenticate yet. This part will be covered below. (PS: Do not spoil yourself and do not click on the button yet :) )
+**At this point, you should have a Cloudformation template deployed and a CNAME created for your website pointing to your ALB. Before going further, you should check that your website is accessible. Browse to https://yourwebsite.com (replace yourwebsite.com by your CNAME). Please note the Login button will not force you to authenticate yet. This part will be covered below. 
 
 
 ### **Configure Cognito User pool**
@@ -117,7 +117,7 @@ Configure the App client settings from the App integration navigation pane :
   
   b. Configure the callback URL(s) l: https://yourdomain.com/oauth2/idpresponse
   
-This tells Cognito where to redirect the User once authenticated, Cognito needs to redirect the authenticated user back to the LoadBalancer. Your Application Load Balancer (ALB) was created as part of a template and a DNS Alias record was created using a custom domain name. Please ask your instructor to know what is the domain name of your ALB. 
+This tells Cognito where to redirect the User once authenticated, Cognito needs to redirect the authenticated user back to the LoadBalancer. Your Application Load Balancer (ALB) was created as part of a template and a DNS Alias record was created using a custom domain name.
 
 In my environment, I am using my own domain name yecine.myinstance.com. as such my callback URL will be :
 https://elbdevlabs.yecine.myinstance.com/oauth2/idpresponse 
@@ -180,6 +180,9 @@ Browse to your ALB Domain name configured for the website : https://yourdomain.c
 
 ### **Delete Stack** 
 
-Once you have done the lab and would like to delete the resources, you can delete the stack. Please note some dependencies might not be able to be deleted by the Stack , if so , make sure to delete them manually and re delete the stack. 
+Once you have done the lab and would like to delete the resources, you can delete the stack. However, the Userpool and Auto-scaling group and Auto scaling launch configuration need to be deleted manually.   
 
 https://aws.amazon.com/premiumsupport/knowledge-center/cloudformation-stack-delete-failed/
+
+
+
