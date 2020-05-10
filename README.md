@@ -1,6 +1,6 @@
 #  Build a Website Login page with AWS ELB and AWS Cognito 
 
-This lab is provided as part of [AWS Builders Online Series](https://aws.amazon.com/events/builders-online-series/).
+This lab is provided as part of [AWS Builders Online Series](https://aws.amazon.com/events/summits/online/).
 
 ℹ️ You will run this lab in your own AWS account. Please follow directions at the end of the lab to remove resources to minimize costs.
 https://aws.amazon.com/events/builders-online-series/
@@ -74,7 +74,7 @@ The stack requires few inputs from you.  Some are self explanatory, but others a
 
 
 
--  Stack Name : Any name you want to give to the stack
+- Stack Name : Any name you want to give to the stack
 
 - ACMCertificate : This is the certificate that ALB will use to secure the communication with your browser. You would need to copy the ARN from the ACM console :
 
@@ -83,7 +83,7 @@ The stack requires few inputs from you.  Some are self explanatory, but others a
 
 - AuthName : This will be the name of the Cognito User pool we will use to create our users. You can give any name. 
 
--ELBAlias : This is the FQDN of your website you will use. You should have noted this down in the requirement. In my own lab I have used the DNS name elbdevlabs.yecine.myinstance.com and created a CNAME pointing to the ALB FQDN accordingly.  
+- ELBAlias : This is the FQDN of your website you will use. You should have noted this down in the requirement. In my own lab I have used the DNS name elbdevlabs.yecine.myinstance.com and created a CNAME pointing to the ALB FQDN accordingly.  
 **We need this value to be exact as the Stack will configure the Web server accordingly.**
 
 
@@ -178,6 +178,7 @@ At this stage, we have an IdP configured with a user. This IdP will be used by A
 
 ### **Try it***
 Browse to your ALB Domain name configured for the website : https://yourdomain.com
+**Make sure to use a new Private Window and or/clear your cookies if you want to logout/re authenticate as once you are logged in, the browser will store the Authentication cookie. 
 
 
 ### **Delete Stack** 
