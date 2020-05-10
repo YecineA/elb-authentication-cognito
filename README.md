@@ -4,7 +4,7 @@ This lab is provided as part of [AWS Builders Online Series](https://aws.amazon.
 
 ℹ️ You will run this lab in your own AWS account. Please follow directions at the end of the lab to remove resources to minimize costs.
 
-Duration: Approximately 1 hour
+Duration: Between 30 minutes and 1 hour.
 
 ## **Overview**
 In this lab, you will be building a website with a simple Login button. The goal is to have a public website available to everyone, and another page only visible for authenticated users. To achieve this, we are using AWS Application Load Balancer (ALB)  which integrates with AWS Cognito. AWS ALB provides authentication through social Identity Providers (IdP) which here will be AWS Cognito. If a user tries to click on the logging button, ALB redirects him to Cognito which will handle the Login and will redirect him back to ALB to access the restricted content. 
