@@ -1,6 +1,6 @@
 #  Build a Website Login page with AWS ELB and AWS Cognito 
 
-This lab is provided as part of [AWS Builders Online Series](https://aws.amazon.com/events/summits/online/).
+This lab is provided as part of [AWS Builders Online Series](https://aws.amazon.com/events/summits/online/). click [here](https://github.com/phonghuule/awssummmitonline) to explore the full list of hands-on labs.
 
 ℹ️ You will run this lab in your own AWS account. Please follow directions at the end of the lab to remove resources to minimize costs.
 
