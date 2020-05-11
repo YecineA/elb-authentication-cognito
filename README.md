@@ -177,7 +177,7 @@ At this stage, we have an IdP configured with a user. This IdP will be used by A
 ![Validate](https://customsolutions.s3-ap-southeast-2.amazonaws.com/Yecine-Devlab/Screen+Shot+2020-04-14+at+12.33.31+PM.png)
 
 
-### **Try it***
+### **Try it**
 Browse to your ALB Domain name configured for the website : https://yourdomain.com
 **Make sure to use a new Private Window and or/clear your cookies if you want to logout/re authenticate as once you are logged in, the browser will store the Authentication cookie.** 
 
