@@ -178,8 +178,9 @@ At this stage, we have an IdP configured with a user. This IdP will be used by A
 
 
 ### **Try it**
-Browse to your ALB Domain name configured for the website : https://yourdomain.com
-**Make sure to use a new Private Window and or/clear your cookies if you want to logout/re authenticate as once you are logged in, the browser will store the Authentication cookie.** 
+Browse to your ALB Domain name configured for the website : https://yourdomain.com.
+
+**Make sure to use a new Private Window and or/clear your cookies if you want to logout/re authenticate as once you are logged in, the browser will store the Authentication cookie. We do not cover the logout process, if this is something you also want to try, let me know in the comments!** 
 
 
 ### **Delete Stack** 
